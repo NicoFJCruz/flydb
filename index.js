@@ -11,13 +11,17 @@ const PORT = process.env.PORT || 3001;
 const corsOptions = {
   credentials: true,
   origin: process.env.CORS_ORIGIN,
-}; 
+};
 
 server.use(cors(corsOptions));
 
 server.use(express.json());
 
 server.use("/", router);
+
+server.use("/", (req, res) => {
+  res.send("Servidor corriendo");
+});
 
 db.sync({ force: false })
   .then(() => {
