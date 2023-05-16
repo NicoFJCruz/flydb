@@ -8,10 +8,10 @@ const server = express();
 
 const PORT = process.env.PORT || 3001;
 
-/* const corsOptions = {
+const corsOptions = {
   credentials: true,
   origin: process.env.CORS_ORIGIN,
-}; */
+}; 
 
 server.use(cors(corsOptions));
 
